@@ -1,0 +1,31 @@
+group 'com.sh.lmg'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.projectlombok:lombok:1.16.8'
+    compile 'org.springframework:spring-core:4.2.5.RELEASE'
+    compile 'org.springframework:spring-context-support:4.2.5.RELEASE'
+    compile 'org.springframework:spring-beans:4.2.5.RELEASE'
+    compile 'org.springframework:spring-oxm:4.2.5.RELEASE'
+    compile "org.springframework:spring-jms:4.2.5.RELEASE"
+    compile 'org.springframework.retry:spring-retry:1.1.2.RELEASE'
+    compile('org.springframework:spring-context:4.2.5.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+    compile 'org.slf4j:slf4j-api:1.7.15'
+    compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.5'
+    compile 'org.apache.logging.log4j:log4j-core:2.5'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'com.alibaba:fastjson:1.2.31'
+    compile 'com.google.code.gson:gson:2.3.1'
+    compile 'org.apache.commons:commons-collections4:4.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
