@@ -3,6 +3,7 @@ package com.sh.lmg.trace;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by liaomengge on 17/5/25.
@@ -10,7 +11,7 @@ import java.util.Random;
 public final class TraceLogUtil {
 
     private static final ThreadLocal<Map<String, String>> inheritableThreadLocal = new InheritableThreadLocal<>();
-    private static final Random random = new Random(System.currentTimeMillis());
+    private static final Random random = ThreadLocalRandom.current();
 
     public static void put(String key, String val) {
         if (key == null) {
